@@ -4,8 +4,10 @@ import Avatar from 'material-ui/lib/avatar';
 import AppBar from 'material-ui/lib/app-bar';
 import { Grid, Row, Cell } from 'react-inline-grid';
 import FontAwesome from 'react-fontawesome';
+import FlatButton from 'material-ui/lib/flat-button';
 
 import data from './data.js';
+import profileButtons from './profile-buttons.js';
 
 class Specs extends React.Component {
 
@@ -43,6 +45,22 @@ class App extends React.Component {
 		return rows;
 	}
 
+	renderButtons() {
+		var buttons = [];
+		for (var key in profileButtons) {
+			var b = profileButtons[key];
+			buttons.push(<div><FlatButton
+				key={key}
+				label={b.label}
+				linkButton={true}
+				href={b.link}
+				secondary={true}
+				icon={<FontAwesome name={b.icon}/>}
+				/></div>)
+		} 
+		return buttons;
+	}
+
 	render() {
 		return (
 			<div>
@@ -62,19 +80,20 @@ class App extends React.Component {
 			</Cell>
 			<Cell is="3 tablet-6 phone-6">
 			<div>
-			<p><a href="https://github.com/arjunkomath"><FontAwesome name='github'/> Github</a></p>
-			<p><a href="http://stackoverflow.com/users/1954422/arjun"><FontAwesome name='stack-overflow'/> Stack Overflow</a></p>
-			<p><a href="https://twitter.com/arjunz"><FontAwesome name='twitter'/> Twitter</a></p>
-			<p><a href="https://github.com/arjunkomath"><FontAwesome name='envelope'/> GMail</a></p>
+
+			{this.renderButtons()}
+
 			</div>
 			</Cell>
 
 			</Row>
 			</Grid>
 
+
 			<Grid>
 			<Row is="center">
 			<Cell is="6 tablet-4 phone-4">
+			<h2>Technical Specifications</h2>
 			<Row is="center">
 			{this.renderSpecs()}
 			</Row>
