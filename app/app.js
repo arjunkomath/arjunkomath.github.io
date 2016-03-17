@@ -142,7 +142,7 @@ class App extends React.Component {
 			<Grid>
 			<Row is="center">
 			<Cell is="6 tablet-4 phone-4">
-			<h2>Projects</h2>
+			<h2>Latest Projects</h2>
 			{this.renderProjects()}
 			</Cell>
 			</Row>

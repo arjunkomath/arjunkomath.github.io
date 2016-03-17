@@ -16,5 +16,11 @@ module.exports = [
 	link: "http://techulus.xyz/",
 	description: "Website for shopping recomendationsWeb, Powered by Node.js (Express)",
 	image: "/img/techulus.png"
+},
+{
+	label: "Honest Reviews",
+	link: "https://play.google.com/store/apps/details?id=com.techulus.honestreviews&hl=en",
+	description: "Honest Reviews - Real Reviews by Real Users!",
+	image: "https://lh3.ggpht.com/VKjtEkEUEHRhfwxh1mi5yUNKxrzlhztcsx1upFSKxNeI2cmg9HlLDpWl4M0Jyfn-YjI=w300-rw"
 }
 ];
