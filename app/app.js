@@ -6,8 +6,9 @@ import { Grid, Row, Cell } from 'react-inline-grid';
 import FontAwesome from 'react-fontawesome';
 import FlatButton from 'material-ui/lib/flat-button';
 
-import data from './data.js';
-import profileButtons from './profile-buttons.js';
+import data from './data/data.js';
+import profileButtons from './data/profile-buttons.js';
+import projects from './data/projects.js';
 
 class Specs extends React.Component {
 
@@ -29,6 +30,35 @@ class Specs extends React.Component {
 			<p>{this.renderFeat()}</p>
 			</div>
 			</Cell>
+			);
+	}
+
+}
+
+class Project extends React.Component {
+
+	componentDidMount() {
+		console.log(this.props.data);
+	}
+
+	render() {
+		return (
+			<Row is="center">
+			<Cell is="3 tablet-6 phone-6">
+			<Avatar src={this.props.data.image} size={160} />
+			</Cell>
+			<Cell is="9 tablet-6 phone-6">
+			<h3>{this.props.data.label}</h3>
+			<p>{this.props.data.description}</p>
+			<FlatButton
+			label="View"
+			linkButton={true}
+			href={this.props.data.link}
+			secondary={true}
+			icon={<FontAwesome name="link"/>}
+			/>
+			</Cell>
+			</Row>
 			);
 	}
 
@@ -59,6 +89,14 @@ class App extends React.Component {
 				/></div>)
 		} 
 		return buttons;
+	}
+
+	renderProjects() {
+		var p = [];
+		for (var key in projects) {
+			p.push(<Project data={projects[key]} key={key} />)
+		}
+		return p;
 	}
 
 	render() {
@@ -97,6 +135,15 @@ class App extends React.Component {
 			<Row is="center">
 			{this.renderSpecs()}
 			</Row>
+			</Cell>
+			</Row>
+			</Grid>
+
+			<Grid>
+			<Row is="center">
+			<Cell is="6 tablet-4 phone-4">
+			<h2>Projects</h2>
+			{this.renderProjects()}
 			</Cell>
 			</Row>
 			</Grid>
