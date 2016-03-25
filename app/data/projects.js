@@ -12,12 +12,6 @@ module.exports = [
 	image: "https://cdn.shopify.com/s/files/applications/c6fd2bbbccb0a7b75b4ee8d0918fd6f4.png"
 },
 {
-	label: "Techulus.xyz",
-	link: "http://techulus.xyz/",
-	description: "Website for shopping recomendations, Powered by Node.js (Express)",
-	image: "/img/techulus.png"
-},
-{
 	label: "Honest Reviews",
 	link: "https://play.google.com/store/apps/details?id=com.techulus.honestreviews&hl=en",
 	description: "Honest Reviews - Real Reviews by Real Users! An android app for device reviews",
