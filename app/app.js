@@ -26,7 +26,7 @@ class Specs extends React.Component {
 		return (
 			<Cell is="6 tablet-6 phone-6">
 			<div>
-			<h3><FontAwesome name={this.props.icon} /> {this.props.title}</h3>
+			<h4><FontAwesome name={this.props.icon} /> {this.props.title}</h4>
 			<p>{this.renderFeat()}</p>
 			</div>
 			</Cell>
@@ -37,10 +37,6 @@ class Specs extends React.Component {
 
 class Project extends React.Component {
 
-	componentDidMount() {
-		console.log(this.props.data);
-	}
-
 	render() {
 		return (
 			<Row is="center">
@@ -48,7 +44,7 @@ class Project extends React.Component {
 			<Avatar src={this.props.data.image} size={160} />
 			</Cell>
 			<Cell is="9 tablet-6 phone-6">
-			<h3>{this.props.data.label}</h3>
+			<h4>{this.props.data.label}</h4>
 			<p>{this.props.data.description}</p>
 			<FlatButton
 			label="View"
@@ -79,8 +75,7 @@ class App extends React.Component {
 		var buttons = [];
 		for (var key in profileButtons) {
 			var b = profileButtons[key];
-			buttons.push(<div><FlatButton
-				key={key}
+			buttons.push(<div key={key}><FlatButton
 				label={b.label}
 				linkButton={true}
 				href={b.link}
@@ -106,7 +101,6 @@ class App extends React.Component {
 			<Grid>
 			<Row is="center">
 			<Cell is="6 tablet-6 tablet-6">
-			<AppBar title="Arjun Komath" />
 			</Cell>
 			</Row>
 			</Grid>
@@ -114,11 +108,12 @@ class App extends React.Component {
 			<Grid>
 			<Row is="center">
 			<Cell is="3 tablet-6 phone-6">
-			<Avatar src="/img/me.jpg" size={160} />
+			<Avatar src="https://avatars.githubusercontent.com/u/2555067?v=3" size={160} />
 			</Cell>
 			<Cell is="3 tablet-6 phone-6">
 			<div>
 
+			<h3>Arjun Komath</h3>
 			{this.renderButtons()}
 
 			</div>
@@ -131,7 +126,7 @@ class App extends React.Component {
 			<Grid>
 			<Row is="center">
 			<Cell is="6 tablet-4 phone-4">
-			<h2>Technical Specifications</h2>
+			<h3>Technical Specifications</h3>
 			<Row is="center">
 			{this.renderSpecs()}
 			</Row>
@@ -142,7 +137,7 @@ class App extends React.Component {
 			<Grid>
 			<Row is="center">
 			<Cell is="6 tablet-4 phone-4">
-			<h2>Latest Projects</h2>
+			<h3>Latest Projects</h3>
 			{this.renderProjects()}
 			</Cell>
 			</Row>
