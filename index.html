@@ -1,41 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-	<meta charset="UTF-8">
-	<meta
-	name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1"
-	>
-	<title>Arjun Komath</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1"
+    >
+    <title>Arjun Komath</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <style>
-	body {
-		font-family: 'Roboto', sans-serif;
-	}
-	.center {
-		margin: auto;
-		width: 100%;
-		padding: 10px;
-	}
+    @media only screen and (min-width : 320px) and (max-width : 768px) {
+        body {
+            font-family: 'PT Serif', serif;
+            margin: 10px 25px 10px 25px;
+        }
+    }
+    @media only screen and (min-width : 768px) {
+        body {
+            font-family: 'PT Serif', serif;
+            margin: 50px 175px 50px 175px;
+        }
+    }
+    .btn {
+        text-transform: uppercase;
+        margin: 15px 15px 15px 15px;
+    }
+    a:link, a:visited {
+        color: #607D8B;
+        text-decoration: none;
+    }
 </style>
 <body>
-	<div class="react-root"></div>
-	<script>
-		var WebFontConfig = {
-			google: { families: [ 'Roboto:400,300,500:latin' ] }
-		};
-		(function() {
-			var wf = document.createElement('script');
-			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-			'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-			wf.type = 'text/javascript';
-			wf.async = 'true';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(wf, s);
-		})();
-	</script>
-     <script src="dist/bundle.js"></script> 
-	<!--<script src="bundle.js"></script>-->
+<div class="react-root"></div>
+<script>
+    var WebFontConfig = {
+        google: {families: ['PT Serif:400:serif']}
+    };
+    (function () {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+</script>
+<script src="dist/bundle.js"></script>
+<!--<script src="bundle.js"></script>-->
 </body>
 </html>

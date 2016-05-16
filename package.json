@@ -31,6 +31,7 @@
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-fontawesome": "^0.3.3",
-    "react-inline-grid": "^0.5.3"
+    "react-inline-grid": "^0.5.3",
+    "react-remarkable": "^1.1.1"
   }
 }
