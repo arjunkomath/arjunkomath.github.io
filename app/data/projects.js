@@ -1,5 +1,11 @@
 module.exports = [
     {
+        label: "Lambda Piper",
+        link: "http://arjunkomath.github.io/lambda-piper/",
+        description: "Pipe-And-Filter using lambda functions",
+        image: "https://lh3.googleusercontent.com/MCoiCCwUan0dxzqRR_Mrr7kO308roYdI2aTsIpUGYWzUmpJT1-R2_J04weQKFEd3Mg=w300-rw"
+    },
+    {
         label: "JAAS - json as a service",
         link: "https://jaas.tech/",
         description: "Simple data store for mobile and web applications",

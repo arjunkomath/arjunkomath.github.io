@@ -13,7 +13,10 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
     ],
     module: {
         loaders: [
@@ -23,7 +26,8 @@ module.exports = {
                 exclude: /node_modules/,
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015', 'react']
+                    presets: ['react', 'es2015', 'stage-0'],
+                    plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
                 }
             }
         ]
