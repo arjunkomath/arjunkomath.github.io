@@ -32,7 +32,6 @@ export default class Main extends React.Component {
     }
 
     render() {
-        console.log(this.state.repos);
         const repos = this.state.repos.map((r) => {
             return (<Repo repo={r} key={r.id} />)
         })
