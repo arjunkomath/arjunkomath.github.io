@@ -1,18 +1,19 @@
-import dispatcher from "../dispatcher";
 import axios from "axios";
 
 export function getRepos() {
-    axios.get('https://api.github.com/users/arjunkomath/repos')
-        .then(function (response) {
-            dispatcher.dispatch({
-                type: "FETCH_REPOS",
-                repos: response.data
+    return function (dispatch) {
+        axios.get('https://api.github.com/users/arjunkomath/repos')
+            .then(function (response) {
+                dispatch({
+                    type: "FETCH_FULFILLED",
+                    payload: response.data
+                });
+            })
+            .catch(function (response) {
+                dispatch({
+                    type: "FETCH_REJECTED",
+                    error: response
+                });
             });
-        })
-        .catch(function (response) {
-            dispatcher.dispatch({
-                type: "FETCH_ERROR",
-                error: response
-            });
-        });
+    }
 }

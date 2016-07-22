@@ -6,7 +6,10 @@ export default class Footer extends React.Component {
         return (
             <div>
                 <br />
-                <p>Powered by <a href="https://facebook.github.io/react/">React</a> and <a href="https://facebook.github.io/flux/">Flux</a></p>
+                <p>Powered by <br/><br/>
+                    <img height="30px"
+                         src="/img/powered.jpg"/>
+                </p>
             </div>
         );
     }

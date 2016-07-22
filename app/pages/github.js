@@ -1,38 +1,23 @@
 import React from "react";
 import Markdown from 'react-remarkable';
 
-import * as OpenSourceActions from "../actions/OpenSourceActions";
-import OpenSourceStore from "../stores/OpenSourceStore";
+import { getRepos } from "../actions/OpenSourceActions";
 
 import Repo from '../components/repo';
+import { connect } from "react-redux";
 
-export default class Main extends React.Component {
+class Github extends React.Component {
 
     constructor() {
         super();
-        this.getRepos = this.getRepos.bind(this);
-        this.state = {
-            repos: OpenSourceStore.getAll()
-        };
     }
 
     componentWillMount() {
-        OpenSourceActions.getRepos();
-        OpenSourceStore.on("change", this.getRepos);
-    }
-
-    componentWillUnmount() {
-        OpenSourceStore.removeListener("change", this.getRepos);
-    }
-
-    getRepos() {
-        this.setState({
-            repos: OpenSourceStore.getAll()
-        });
+        this.props.dispatch(getRepos())
     }
 
     render() {
-        const repos = this.state.repos.map((r) => {
+        const repos = this.props.repos.map((r) => {
             return (<Repo repo={r} key={r.id} />)
         })
         return (
@@ -46,3 +31,11 @@ export default class Main extends React.Component {
     }
 
 }
+
+function mapStateToProps(state) {
+    return {
+        repos: state.OpenSourceReducer.repos
+    };
+}
+
+export default connect(mapStateToProps)(Github);
