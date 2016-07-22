@@ -1,2 +1,2 @@
 # arjunkomath.github.io
-Powered by [React](https://facebook.github.io/react) and [Flux](https://facebook.github.io/flux)
+Powered by [React](https://facebook.github.io/react) and [Redux](http://redux.js.org/)
