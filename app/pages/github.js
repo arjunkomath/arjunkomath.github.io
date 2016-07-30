@@ -6,6 +6,8 @@ import { getRepos } from "../actions/OpenSourceActions";
 import Repo from '../components/repo';
 import { connect } from "react-redux";
 
+import Loader from 'halogen/ScaleLoader';
+
 class Github extends React.Component {
 
     constructor() {
@@ -24,7 +26,7 @@ class Github extends React.Component {
             <div>
                 <Markdown>
                     ### Open Source Contributions
-                    {repos.length ? repos : (<h4>Loading...</h4>)}
+                    {repos.length ? repos : (<Loader color="#607D8B" margin="4px"/>)}
                 </Markdown>
             </div>
         )
