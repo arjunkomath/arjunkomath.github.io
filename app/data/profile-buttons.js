@@ -21,7 +21,7 @@ module.exports = [
 },
 {
 	label: "Download Resume",
-	link: "/arjun_komath.pdf",
+	link: "http://goo.gl/EDvMhh",
 	icon: "download"
 }
 ];
