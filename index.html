@@ -64,19 +64,19 @@
         0%,
         100% {
           transform: translate(0);
-          text-shadow: 2px 2px 0 #ff00de, -2px -2px 0 #00fff9;
+          text-shadow: 2px 2px 0 #ff0000, -2px -2px 0 #0000ff;
         }
         25% {
           transform: translate(-3px, 3px);
-          text-shadow: -3px -3px 0 #ff00de, 3px 3px 0 #00fff9;
+          text-shadow: -3px -3px 0 #ff0000, 3px 3px 0 #0000ff;
         }
         50% {
           transform: translate(3px, -3px);
-          text-shadow: 3px 3px 0 #00fff9, -3px -3px 0 #ff00de;
+          text-shadow: 3px 3px 0 #0000ff, -3px -3px 0 #ff0000;
         }
         75% {
           transform: translate(-2px, -2px);
-          text-shadow: 2px -2px 0 #ff00de, -2px 2px 0 #00fff9;
+          text-shadow: 2px -2px 0 #ff0000, -2px 2px 0 #0000ff;
         }
       }
 
@@ -292,6 +292,12 @@
         asciiArtElement.classList.add("typing");
         typeWriter();
       }, 500);
+
+      console.log(
+        "%cHey there! 👀 Found you snooping around my console. I like your style! %cLet's talk: arjunkomath@gmail.com",
+        "color: #ff0000; font-weight: bold; font-size: 14px;",
+        "color: #ff0000; font-weight: bold; font-size: 14px;"
+      );
     </script>
   </body>
 </html>
